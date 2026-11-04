@@ -22,14 +22,16 @@ x-wonton:
   version: 0.1.0
   kind: app
   title: { en: IT Tools }
-  description: { zh: 开发者常用的 80 多个小工具，都在浏览器里本地计算, en: 80+ handy tools for developers, all computed locally in your browser }
+  description:
+    zh: 开发者常用的 80 多个小工具，都在浏览器里本地计算
+    en: 80+ handy tools for developers, all computed locally in your browser
   icon: icon.png
   notices: [NOTICE]
   screenshots: [screenshots/home.png]
   author: { name: geraldpeng6, url: https://github.com/geraldpeng6 }
   homepage: https://it-tools.tech
-  # 应用（IT-Tools）的许可证；插件包自己的许可证写在仓库的 LICENSE 里。
-  license: GPL-3.0
+  # 应用（IT-Tools）的许可证（GNU GPLv3 → SPDX GPL-3.0-only）；插件包自己的许可证写在仓库的 LICENSE 里。
+  license: GPL-3.0-only
   tags:
     zh: [工具, 开发]
     en: [Tools, Developer]
@@ -49,7 +51,7 @@ x-wonton:
     # 应用没有账号体系，所有工具本地计算；网页仍只在网关登录后面可达。
     sso: none
   permissions: []
-  # 上游没写最低内存；本机空闲实测约 N M，取 64M。镜像支持 amd64 和 arm64（docker manifest inspect）。
+  # 上游没写最低内存；本机空闲实测约 31M，取 64M。镜像支持 amd64 和 arm64（docker manifest inspect）。
   requirements:
     arch: [amd64, arm64]
     memory: 64M

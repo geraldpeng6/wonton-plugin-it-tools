@@ -1,11 +1,18 @@
-# 云吞插件模板
+# 云吞插件：IT Tools
 
-云吞（Wonton）的插件就是一个 `docker-compose.yml`，顶层多一个 `x-wonton` 字段，写明插件在云吞里的身份、网页入口和要的
-权限。一个插件一个 Git 仓库，仓库根目录就是插件包，发布就是打 tag。用户在 App 里装上插件，核心按清单起容器、接好登录，
-插件的网页在 App 里作为小程序打开。
+[IT-Tools](https://it-tools.tech)（[corentinth/it-tools](https://github.com/CorentinTh/it-tools)，GPL-3.0）是面向开发者的
+80 多个小工具：JSON 和 YAML 转换、加解密、哈希、二维码、颜色和单位换算……全部在浏览器里本地计算，无账号、无存储、
+不出网。这个插件把它装进云吞：网页经核心网关打开，网关只校验登录（`sso: none`），应用没有任何用户体系，也不申请任何
+额外权限。
 
-这个仓库是模板：一个能装上的示例插件（nginx 显示一个向用户问好的网页），加上检查、开发环境和发布三个脚本。从这个模板
-新建仓库，照着下面把示例换成你的应用。
+插件用上游官方镜像 `ghcr.io/corentinth/it-tools`，按摘要固定。应用是无状态的纯静态页面，根文件系统只读，不挂任何卷。
+
+## 图标来源
+
+`icon.png` 使用 IT-Tools 的官方 `public/android-chrome-512x512.png`（构建 2024.10.22-7ca5933），未用图片模型生成；
+透明区域合成到白色底板，其余原样；来源、版权、处理方式、上游 GPL-3.0 全文和商标说明见 [NOTICE](NOTICE)。
+
+IT Tools 名称和标志是上游项目的商标，权利归相应权利人。本插件是社区适配，不暗示与上游官方合作、关联或获得背书。
 
 ## 准备
 
@@ -27,20 +34,17 @@ scripts/dev.sh up
 scripts/dev.sh install
 ```
 
-`up` 在本机起一套云吞，打印它的地址。示例（实例名取自目录名加 4 位随机数，端口随机）是
-`http://template3f2a.wonton.localhost:21234/`。浏览器打开，用 `scripts/dev.sh token` 输出的用户令牌登录。`install` 先列出
-插件要的权限，确认后装上，打印插件网页的地址。
-
-示例网页经 `sso: proxy` 拿到用户名，打开就是“你好，<用户名>”。换成真实应用时，把示例的 `description`、`about`、`tags`
-换成你的，`web/`、compose 里的两个 `configs` 和 `sso: proxy` 及其 `proxy` 删掉（默认让应用自己登录），`webui.service`、
-`port` 换成你的，按下面的规则重写。Chrome、Firefox 和 curl 把 `*.localhost` 直接解析到本机，不用改 hosts。
+`up` 在本机起一套云吞，打印它的地址（实例名取自目录名加 4 位随机数，端口随机），如
+`http://ittools3f2a.wonton.localhost:21234/`。浏览器打开，用 `scripts/dev.sh token` 输出的用户令牌登录。`install` 先列出
+插件要的权限（本插件没有），确认后装上，打印插件网页的地址，打开就是 IT Tools 的工具列表。Chrome、Firefox 和 curl 把
+`*.localhost` 直接解析到本机，不用改 hosts。
 
 ## 仓库里有什么
 
 | 路径 | 内容 |
 | --- | --- |
 | `docker-compose.yml` | 插件本身：compose 加上 `x-wonton` 清单 |
-| `icon.svg`、`web/` | 清单和 compose 引用的文件：图标、交给容器的配置和网页 |
+| `icon.png` | 清单引用的图标，取自上游官方标志 |
 | `screenshots/` | 商店详情页里的截图 |
 | `scripts/check.sh` | 检查插件包，规则和安装时一样 |
 | `scripts/dev.sh` | 开发环境：起一套云吞，装、重装、卸载插件，看日志 |

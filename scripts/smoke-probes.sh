@@ -7,10 +7,7 @@
 #       要断言多个工具时改成写 mcp_check；调用前要备数据时写 before_mcp。
 # 装之前要准备（如先配出口代理）：写 before_install。
 
-web_assert() { grep -q '你好'; }   # 示例页的标题
+# IT-Tools 是纯静态应用，没有用户体系：页面能打开、是应用本身即可；身份项不适用（IDENTITY_NA=1）。
+IDENTITY_NA=1
 
-identity_check() { # 页面回显的就是网关注入的用户名
-  local page
-  page="$(dweb /)" || { echo "页面失败：$page"; return 1; }
-  grep -qF "你好，$SMOKE_OWNER" <<<"$page" || { echo "页面没回显用户 $SMOKE_OWNER：$(head -c 120 <<<"$page")"; return 1; }
-}
+web_assert() { grep -qi 'IT Tools'; }   # 应用页面的标题
