@@ -1,6 +1,6 @@
 # 云吞插件：IT Tools
 
-[IT-Tools](https://it-tools.tech)（[corentinth/it-tools](https://github.com/CorentinTh/it-tools)，GPL-3.0）是面向开发者的
+[IT-Tools](https://it-tools.tech)（[corentinth/it-tools](https://github.com/CorentinTh/it-tools)，GPL-3.0-only）是面向开发者的
 80 多个小工具：JSON 和 YAML 转换、加解密、哈希、二维码、颜色和单位换算……全部在浏览器里本地计算，无账号、无存储、
 不出网。这个插件把它装进云吞：网页经核心网关打开，网关只校验登录（`sso: none`），应用没有任何用户体系，也不申请任何
 额外权限。
@@ -10,7 +10,7 @@
 ## 图标来源
 
 `icon.png` 使用 IT-Tools 的官方 `public/android-chrome-512x512.png`（构建 2024.10.22-7ca5933），未用图片模型生成；
-透明区域合成到白色底板，其余原样；来源、版权、处理方式、上游 GPL-3.0 全文和商标说明见 [NOTICE](NOTICE)。
+透明区域合成到白色底板，其余原样；来源、版权、处理方式、上游 GPL-3.0-only 全文和商标说明见 [NOTICE](NOTICE)。
 
 IT Tools 名称和标志是上游项目的商标，权利归相应权利人。本插件是社区适配，不暗示与上游官方合作、关联或获得背书。
 
