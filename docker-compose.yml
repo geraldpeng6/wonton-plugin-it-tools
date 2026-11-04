@@ -1,7 +1,7 @@
 # IT-Tools：80 多个开发者小工具，全部在浏览器本地计算，无账号、无存储、不出网。
 services:
   it-tools:
-    # 上游官方镜像（GPL-3.0，nginx:alpine 底座），按 amd64/arm64 清单列表摘要固定，2024.10.22 后上游未再发版。
+    # 上游官方镜像（nginx:alpine 底座，服务的是纯静态页面），按 amd64/arm64 清单列表摘要固定。
     image: ghcr.io/corentinth/it-tools:2024.10.22-7ca5933@sha256:8b8128748339583ca951af03dfe02a9a4d7363f61a216226fc28030731a5a61f
     # 应用是无状态的纯静态页面，根文件系统只读；nginx 自己要写的三处（缓存、pid、日志）用 tmpfs 兜住。
     read_only: true
