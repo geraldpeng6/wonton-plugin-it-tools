@@ -1,6 +1,6 @@
 # 云吞插件：IT Tools
 
-开发流程见[插件开发指南](https://github.com/geraldpeng6/wonton-docs/blob/main/develop.md)。
+开发流程见[插件开发指南](https://github.com/wontonapp/wonton-docs/blob/main/develop.md)。
 
 [IT-Tools](https://it-tools.tech)（[corentinth/it-tools](https://github.com/CorentinTh/it-tools)，GPL-3.0-only）是面向开发者的
 80 多个小工具：JSON 和 YAML 转换、加解密、哈希、二维码、颜色和单位换算……全部在浏览器里本地计算，无账号、无存储、
