@@ -21,10 +21,10 @@ x-wonton:
   id: tech.it-tools.it-tools
   version: 0.1.0
   kind: app
-  title: { en: IT Tools }
+  title: { zh: 小工具合集（IT Tools）, en: Handy Tools (IT Tools) }
   description:
-    zh: 开发者常用的 80 多个小工具，都在浏览器里本地计算
-    en: 80+ handy tools for developers, all computed locally in your browser
+    zh: 像一把数字瑞士军刀：生成二维码、换算单位、处理文字、生成密码等 80 多个小工具，打开网页就能用，内容只在你的浏览器里处理。
+    en: "A digital Swiss Army knife: 80+ little tools — QR codes, unit conversion, text helpers, password generators and more — that run entirely in your browser."
   icon: icon.png
   notices: [NOTICE]
   screenshots: [screenshots/home.png]
